@@ -59,7 +59,7 @@ variable "app_command_line" {
 variable "java_server" {
   type = string
   description = "docker image" 
-  dedefault = "JAVA" 
+  default = "JAVA" 
 }
 
 # variable "docker_image_tag" {
