@@ -62,7 +62,7 @@ variable "java_server" {
   default = "JAVA" 
 }
 
-# variable "docker_image_tag" {
-#   type = number
-#   description = "Tag for docker image"
-# }
+variable "docker_image_tag" {
+  type = number
+  description = "Tag for docker image"
+}

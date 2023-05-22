@@ -23,9 +23,8 @@ resource "azurerm_linux_web_app" "example" {
     dynamic "application_stack" { 
       for_each = var.current_stack == "docker" ? [1] : []
       content {
-        # docker_image = var.docker_image
         docker_image = var.stack_version
-        docker_image_tag = "v1.0.0"
+        docker_image_tag = var.docker_image_tag
       }
       }
     dynamic "application_stack" { 
