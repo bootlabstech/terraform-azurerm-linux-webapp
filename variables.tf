@@ -63,6 +63,6 @@ variable "java_server" {
 }
 
 variable "docker_image_tag" {
-  type = number
+  type = string
   description = "Tag for docker image"
 }
