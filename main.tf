@@ -1,3 +1,4 @@
+# Creates a Linux Webapp
 resource "azurerm_linux_web_app" "example" {
   name                = var.name
   resource_group_name = var.resource_group_name
@@ -37,7 +38,7 @@ resource "azurerm_linux_web_app" "example" {
       for_each = var.current_stack == "java" ? [1] : []
       content {
         java_server = var.java_server
-        java_server_version = var.stack_version
+        java_version = var.stack_version
       }
       }
     dynamic "application_stack" { 

@@ -1,60 +1,50 @@
 variable "name" {
     type = string
-    description = "value"
+    description = " The name which should be used for this Linux Web App."
   
 }
 variable "resource_group_name" {
     type = string
-    description = "value"
+    description = "The name of the Resource Group where the Linux Web App should exist"
   
 }
 variable "location" {
     type = string
-    description = "value"
+    description = "The Azure Region where the Linux Web App should exist."
   
 }
 variable "service_plan_id" {
     type = string
-    description = "value"
+    description = "The ID of the Service Plan that this Linux App Service will be created in."
   
 }
 variable "application_stack" {
-    description = "value"
+    description = "What kind of application stack is the website"
     type = bool
     default = true
   
 }
 variable "current_stack" {
     type = string
-    description = "value"
+    description = "Application Tech Stach"
 }
 
 variable "stack_version" {
     type = string
-    description = "value"
+    description = "Stack Version"
 }
 
 variable "ftps_state" {
   type        = string
-  description = " Specifies the plan's instance size."
+  description = "The State of FTP / FTPS service. Possible values include AllAllowed, FtpsOnly, and Disabled."
   default     = "FtpsOnly"
 }
 
 variable "app_command_line" {
   type        = string
-  description = "(optional) describe your variable"
-  default     = ""
+  description = "The App command line to launch."
 }
-# variable "python_version" {
-#   type        = string
-#   description = " Is this App Service Plan Reserved. Defaults to false."
-#   default     = "3.11"
-# }
-# variable "node_version" {
-#   type        = string
-#   description = " Is this App Service Plan Reserved. Defaults to false."
-#   default     = "22-lts"
-# }
+
 
 variable "java_server" {
   type = string
@@ -65,4 +55,5 @@ variable "java_server" {
 variable "docker_image_tag" {
   type = string
   description = "Tag for docker image"
+  default = "latest"
 }
