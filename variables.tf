@@ -57,3 +57,4 @@ variable "docker_image_tag" {
   description = "Tag for docker image"
   default = "latest"
 }
+    
