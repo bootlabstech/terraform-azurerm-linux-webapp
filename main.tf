@@ -50,14 +50,14 @@ resource "azurerm_linux_web_app" "example" {
     dynamic "application_stack" {
       for_each = var.current_stack == "python" ? [1] : []
       content {
-        python_version = var.python_version
+        python_version = var.stack_version
       }
     }
   }
   dynamic "application_stack" {
     for_each = var.current_stack == "ruby" ? [1] : []
     content {
-      ruby_version = var.python_version
+      ruby_version = var.stack_version
     }
   }
 }
