@@ -30,7 +30,10 @@ variable "app_command_line" {
   description = "The App command line to launch."
   default     = ""
 }
-
+variable "current_stack" {
+     type = string
+     description = " The Application Stack for the Windows Web App. Possible values include dotnet, dotnetcore, node, python, php, and java."
+}
 variable "stack_version" {
   type        = string
   description = "Version of the selected stack."
