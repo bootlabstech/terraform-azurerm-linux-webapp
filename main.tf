@@ -4,10 +4,14 @@ resource "azurerm_linux_web_app" "example" {
   resource_group_name = var.resource_group_name
   location            = var.location
   service_plan_id     = var.service_plan_id
+  https_only = var.https_only
+  virtual_network_subnet_id = var.virtual_network_subnet_id
+
 
   site_config {
     ftps_state       = var.ftps_state
     app_command_line = var.app_command_line
+    vnet_route_all_enabled = var.vnet_route_all_enabled
     ip_restriction {
        action     = "Allow" 
               headers    = [] 

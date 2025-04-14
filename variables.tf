@@ -57,3 +57,20 @@ variable "docker_registry_password" {
   default     = "Welcome@1234"
 
 }
+
+variable "vnet_route_all_enabled" {
+  type        = bool
+  default = true
+  description = "The name which should be used for this Windows Windows Web App."
+}
+
+variable "https_only" {
+  type        = bool
+  default = true
+  description = "The name of the Resource Group where the Windows Web App should exist."
+}
+
+variable "virtual_network_subnet_id" {
+  type        = string
+  description = "The Azure Region where the Windows Web App should exist.Central India or South India"
+}
