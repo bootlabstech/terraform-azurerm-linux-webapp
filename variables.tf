@@ -25,11 +25,41 @@ variable "ftps_state" {
   default     = "FtpsOnly"
 }
 
+variable "https_only" {
+  description = "Force HTTPS only"
+  type        = bool
+  default     = true
+}
+
 variable "app_command_line" {
   type        = string
   description = "The App command line to launch."
   default     = ""
 }
+variable "php_ini_scan_dir" {
+  description = "PHP INI scan directory path"
+  type        = string
+  default     = ""
+}
+
+variable "cors_allowed_origins" {
+  description = "List of allowed origins for CORS"
+  type        = list(string)
+  default     = [
+    "https://translate.google.com",
+    "https://translate.googleapis.com",
+    "https://www.google.com",
+    "https://www.gstatic.com",
+  ]
+}
+
+variable "cors_support_credentials" {
+  description = "Whether CORS should support credentials"
+  type        = bool
+  default     = true
+}
+
+
 variable "current_stack" {
      type = string
      description = " The Application Stack for the Windows Web App. Possible values include dotnet, dotnetcore, node, python, php, and java."
@@ -56,21 +86,4 @@ variable "docker_registry_password" {
   description = "The User Name to use for authentication against the registry to pull the image."
   default     = "Welcome@1234"
 
-}
-
-variable "vnet_route_all_enabled" {
-  type        = bool
-  default = true
-  description = "The name which should be used for this Windows Windows Web App."
-}
-
-variable "https_only" {
-  type        = bool
-  default = true
-  description = "The name of the Resource Group where the Windows Web App should exist."
-}
-
-variable "virtual_network_subnet_id" {
-  type        = string
-  description = "The Azure Region where the Windows Web App should exist.Central India or South India"
 }
